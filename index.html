@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAGUI Electrónica</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <!-- Logo pequeño en la barra -->
+            <div class="logo-nav">
+                <img src="img/logo.png" alt="Logo YAGUI">
+            </div>
+            <!-- Menú a la derecha -->
+            <ul>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Quienes Somos</a>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="toggleHistoria()">Historia</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Nuestros Productos</a>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="toggleAntenas()">Antenas</a>
+                        <a href="#" onclick="toggleSoportes()">Soportes</a>
+                        <a href="#" onclick="toggleFerreteria()">Ferreteria</a>
+                        <a href="#" onclick="toggleSeguridad()">Seguridad</a>
+                        <a href="#" onclick="toggleAccesorios()">Accesorios</a>
+                        <a href="#" onclick="toggleElectronica()">Electronica</a>
+                    </div>
+                </li>
+
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <!-- Aquí podés poner tu carrusel o dejarlo vacío -->
+    </header>
+
+    <!-- Sección Historia oculta por defecto -->
+    <section id="historia" class="about-us" style="display:none;">
+        <h2>Historia</h2>
+        <p>
+            YAGUI Electrónica es una empresa con más de 30 años de trayectoria en nuestro país,
+            con el objetivo de ofrecer soluciones de alta calidad en la fabricación y venta de antenas
+            y soportes LED/LCD. Nuestra misión es brindar productos innovadores y de excelente rendimiento
+            y calidad, adaptados a las necesidades de nuestros clientes. Nuestro equipo está compuesto por
+            profesionales dedicados que se esfuerzan por alcanzar la excelencia en cada uno de nuestros productos.
+        </p>
+    </section>
+
+    <main>
+    <!-- Sección Antenas -->
+    <section id="antenas" class="products" style="display:none;">
+        <h2>Antenas</h2>
+        <div class="product">
+            <img src="img/panelplano14.jpeg" alt="Antena Panel 14 dBi">
+            <h3>Panel Plano 14 dBi</h3>
+            <p>Ganancia: 14 dBi | Banda UHF (470–806 MHz)</p>
+            <p>Material: Aluminio y alambre galvanizado</p>
+            <p>Precio: $XXXX</p>
+            <button>Añadir al carrito</button>
+        </div>
+        <div class="product">
+            <img src="img/panelpalno9.png" alt="Antena Panel 9 dBi">
+            <h3>Panel Plano 9 dBi</h3>
+            <p>Ganancia: 9 dBi | Banda UHF (470–806 MHz)</p>
+            <p>Material: Aluminio y alambre galvanizado</p>
+            <p>Precio: $XXXX</p>
+            <button>Añadir al carrito</button>
+        </div>
+        <div class="product">
+            <img src="img/minide9.png" alt="Antena mini 9 dBi">
+            <h3>Antena mini de 9 dBi</h3>
+            <p>Ganancia: 9 dBi | Banda UHF (470–806 MHz)</p>
+            <p>Material: Aluminio </p>
+            <p>Precio: $XXXX</p>
+            <button>Añadir al carrito</button>
+        </div>
+        <div class="product">
+            <img src="img/minide9balles.jpeg" alt="Antena mini con ballestra 9 dBi">
+            <h3>Antena mini con ballestra 9 dBi</h3>
+            <p>Ganancia: 9 dBi | Banda UHF (470–806 MHz)</p>
+            <p>Material: Aluminio y alambre galvanizado</p>
+            <p>Precio: $XXXX</p>
+            <button>Añadir al carrito</button>
+        </div>
+        <div class="product">
+            <img src="img/mini12.jpeg" alt="Antena mini 12 dBi">
+            <h3>Antena mini 12 dBi</h3>
+            <p>Ganancia: ?  dBi | Banda UHF (470–806 MHz)</p>
+            <p>Material: Aluminio y alambre galvanizado</p>
+            <p>Precio: $XXXX</p>
+            <button>Añadir al carrito</button>
+        </div>
+    </section>
+
+    <!-- Sección Soportes -->
+    <section id="soportes" class="products" style="display:none;">
+        <h2>Soportes</h2>
+        <!-- Aquí van los productos de soportes -->
+    </section>
+
+    <!-- Sección Ropa de Seguridad Industrial -->
+    <section id="seguridad" class="products" style="display:none;">
+        <h2>Ropa de seguridad Industrial</h2>
+        <!-- Aquí van los productos de seguridad -->
+    </section>
+
+    <!-- Sección Artículos Ferreteria -->
+    <section id="ferreteria" class="products" style="display:none;">
+        <h2>Ferreteria</h2>
+        <!-- Aquí van articulos de ferreteria -->
+    </section>
+
+    <!-- Sección Electronica -->
+    <section id="electronica" class="products" style="display:none;">
+        <h2>Electronica</h2>
+        <!-- Aquí van los productos de electronica -->
+    </section>
+
+    <!--secciòn accesorios-->
+    <section id="accesorios" class="products" style="display:none;">
+        <h2>Accesorios</h2>
+        <!-- Aquí van accesorios  -->
+    </section>
+</main>
+
+    <footer>
+    <p>Fabricación de antenas y soportes de TV/LED/LCD &copy; 2024 YAGUI ELECTRONICA</p>
+    <div class="social-icons">
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="img/ig.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="img/face.png" alt="Facebook">
+        </a>
+        <a href="https://www.linkedin.com" target="_blank">
+            <img src="img/in.png" alt="LinkedIn">
+        </a>
+    </div>
+    </footer>
+
+
+    <!-- Script para mostrar/ocultar Historia -->
+    <script>
+        function toggleHistoria() {
+            const historia = document.getElementById("historia");
+            if (historia.style.display === "none" || historia.style.display === "") {
+                historia.style.display = "block";  // mostrar
+            } else {
+                historia.style.display = "none";   // ocultar
+            }
+        }
+         function toggleAntenas() {
+        const antenas = document.getElementById("antenas");
+        if (antenas.style.display === "none" || antenas.style.display === "") {
+            antenas.style.display = "block";  // mostrar
+        } else {
+            antenas.style.display = "none";   // ocultar
+        }
+    }
+        function toggleSoportes() {
+        const soportes = document.getElementById("soportes");
+        soportes.style.display = (soportes.style.display === "none" || soportes.style.display === "") ? "block" : "none";
+    }
+
+    function toggleSeguridad() {
+        const seguridad = document.getElementById("seguridad");
+        seguridad.style.display = (seguridad.style.display === "none" || seguridad.style.display === "") ? "block" : "none";
+    }
+
+    function toggleFerreteria() {
+        const ferreteria = document.getElementById("ferreteria");
+        ferreteria.style.display = (ferreteria.style.display === "none" || ferreteria.style.display === "") ? "block" : "none";
+    }
+
+    function toggleElectronica() {
+        const electronica = document.getElementById("electronica");
+        electronica.style.display = (electronica.style.display === "none" || electronica.style.display === "") ? "block" : "none";
+    }
+    function toggleAccesorios() {
+    const accesorios = document.getElementById("accesorios");
+    accesorios.style.display = (accesorios.style.display === "none" || accesorios.style.display === "") ? "block" : "none";
+}
+    </script>
+</body>
