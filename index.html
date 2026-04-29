@@ -9,41 +9,32 @@
 <body>
     <nav>
         <div class="nav-container">
-            <!-- Logo pequeño en la barra -->
+            <!-- Logo -->
             <div class="logo-nav">
                 <img src="img/logo.png" alt="Logo YAGUI">
             </div>
-            <!-- Menú a la derecha -->
-            <ul>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Quienes Somos</a>
-                    <div class="dropdown-content">
-                        <a href="#" onclick="toggleHistoria()">Historia</a>
-                    </div>
-                </li>
 
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Nuestros Productos</a>
-                    <div class="dropdown-content">
-                        <a href="#" onclick="toggleAntenas()">Antenas</a>
-                        <a href="#" onclick="toggleSoportes()">Soportes</a>
-                        <a href="#" onclick="toggleFerreteria()">Ferreteria</a>
-                        <a href="#" onclick="toggleSeguridad()">Seguridad</a>
-                        <a href="#" onclick="toggleAccesorios()">Accesorios</a>
-                        <a href="#" onclick="toggleElectronica()">Electronica</a>
-                    </div>
-                </li>
-
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+            <!-- Botón hamburguesa -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
+
+        <!-- Sidebar lateral -->
+        <ul id="menu" class="sidebar">
+            <li><a href="#" onclick="toggleHistoria()">Quienes Somos</a></li>
+            <li><a href="#" onclick="toggleAntenas()">Nuestros Productos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
     </nav>
 
     <header>
-        <!-- Aquí podés poner tu carrusel o dejarlo vacío -->
+        <!-- Carrusel o imagen -->
     </header>
 
-    <!-- Sección Historia oculta por defecto -->
+    <!-- Sección Historia completa -->
     <section id="historia" class="about-us" style="display:none;">
         <h2>Historia</h2>
         <p>
@@ -56,138 +47,112 @@
     </section>
 
     <main>
-    <!-- Sección Antenas -->
-    <section id="antenas" class="products" style="display:none;">
-        <h2>Antenas</h2>
-        <div class="product">
-            <img src="img/panelplano14.jpeg" alt="Antena Panel 14 dBi">
-            <h3>Panel Plano 14 dBi</h3>
-            <p>Ganancia: 14 dBi | Banda UHF (470–806 MHz)</p>
-            <p>Material: Aluminio y alambre galvanizado</p>
-            <p>Precio: $XXXX</p>
-            <button>Añadir al carrito</button>
-        </div>
-        <div class="product">
-            <img src="img/panelpalno9.png" alt="Antena Panel 9 dBi">
-            <h3>Panel Plano 9 dBi</h3>
-            <p>Ganancia: 9 dBi | Banda UHF (470–806 MHz)</p>
-            <p>Material: Aluminio y alambre galvanizado</p>
-            <p>Precio: $XXXX</p>
-            <button>Añadir al carrito</button>
-        </div>
-        <div class="product">
-            <img src="img/minide9.png" alt="Antena mini 9 dBi">
-            <h3>Antena mini de 9 dBi</h3>
-            <p>Ganancia: 9 dBi | Banda UHF (470–806 MHz)</p>
-            <p>Material: Aluminio </p>
-            <p>Precio: $XXXX</p>
-            <button>Añadir al carrito</button>
-        </div>
-        <div class="product">
-            <img src="img/minide9balles.jpeg" alt="Antena mini con ballestra 9 dBi">
-            <h3>Antena mini con ballestra 9 dBi</h3>
-            <p>Ganancia: 9 dBi | Banda UHF (470–806 MHz)</p>
-            <p>Material: Aluminio y alambre galvanizado</p>
-            <p>Precio: $XXXX</p>
-            <button>Añadir al carrito</button>
-        </div>
-        <div class="product">
-            <img src="img/mini12.jpeg" alt="Antena mini 12 dBi">
-            <h3>Antena mini 12 dBi</h3>
-            <p>Ganancia: ?  dBi | Banda UHF (470–806 MHz)</p>
-            <p>Material: Aluminio y alambre galvanizado</p>
-            <p>Precio: $XXXX</p>
-            <button>Añadir al carrito</button>
-        </div>
-    </section>
+        <!-- Sección Antenas completa -->
+        <section id="antenas" class="products" style="display:none;">
+            <h2>Antenas</h2>
+            <div class="product">
+                <img src="img/panelplano14.jpeg" alt="Antena Panel 14 dBi">
+                <h3>Panel Plano 14 dBi</h3>
+                <p>Ganancia: 14 dBi | Banda UHF (470–806 MHz)</p>
+                <p>Material: Aluminio y alambre galvanizado</p>
+                <p>Precio: $XXXX</p>
+                <button>Añadir al carrito</button>
+            </div>
+            <div class="product">
+                <img src="img/panelpalno9.png" alt="Antena Panel 9 dBi">
+                <h3>Panel Plano 9 dBi</h3>
+                <p>Ganancia: 9 dBi | Banda UHF (470–806 MHz)</p>
+                <p>Material: Aluminio y alambre galvanizado</p>
+                <p>Precio: $XXXX</p>
+                <button>Añadir al carrito</button>
+            </div>
+            <div class="product">
+                <img src="img/minide9.png" alt="Antena mini 9 dBi">
+                <h3>Antena mini de 9 dBi</h3>
+                <p>Ganancia: 9 dBi | Banda UHF (470–806 MHz)</p>
+                <p>Material: Aluminio</p>
+                <p>Precio: $XXXX</p>
+                <button>Añadir al carrito</button>
+            </div>
+            <div class="product">
+                <img src="img/minide9balles.jpeg" alt="Antena mini con ballestra 9 dBi">
+                <h3>Antena mini con ballestra 9 dBi</h3>
+                <p>Ganancia: 9 dBi | Banda UHF (470–806 MHz)</p>
+                <p>Material: Aluminio y alambre galvanizado</p>
+                <p>Precio: $XXXX</p>
+                <button>Añadir al carrito</button>
+            </div>
+            <div class="product">
+                <img src="img/mini12.jpeg" alt="Antena mini 12 dBi">
+                <h3>Antena mini 12 dBi</h3>
+                <p>Ganancia: ? dBi | Banda UHF (470–806 MHz)</p>
+                <p>Material: Aluminio y alambre galvanizado</p>
+                <p>Precio: $XXXX</p>
+                <button>Añadir al carrito</button>
+            </div>
+        </section>
 
-    <!-- Sección Soportes -->
-    <section id="soportes" class="products" style="display:none;">
-        <h2>Soportes</h2>
-        <!-- Aquí van los productos de soportes -->
-    </section>
-
-    <!-- Sección Ropa de Seguridad Industrial -->
-    <section id="seguridad" class="products" style="display:none;">
-        <h2>Ropa de seguridad Industrial</h2>
-        <!-- Aquí van los productos de seguridad -->
-    </section>
-
-    <!-- Sección Artículos Ferreteria -->
-    <section id="ferreteria" class="products" style="display:none;">
-        <h2>Ferreteria</h2>
-        <!-- Aquí van articulos de ferreteria -->
-    </section>
-
-    <!-- Sección Electronica -->
-    <section id="electronica" class="products" style="display:none;">
-        <h2>Electronica</h2>
-        <!-- Aquí van los productos de electronica -->
-    </section>
-
-    <!--secciòn accesorios-->
-    <section id="accesorios" class="products" style="display:none;">
-        <h2>Accesorios</h2>
-        <!-- Aquí van accesorios  -->
-    </section>
-</main>
+        <!-- Otras secciones -->
+        <section id="soportes" class="products" style="display:none;">
+            <h2>Soportes</h2>
+        </section>
+        <section id="seguridad" class="products" style="display:none;">
+            <h2>Ropa de seguridad Industrial</h2>
+        </section>
+        <section id="ferreteria" class="products" style="display:none;">
+            <h2>Ferreteria</h2>
+        </section>
+        <section id="electronica" class="products" style="display:none;">
+            <h2>Electronica</h2>
+        </section>
+        <section id="accesorios" class="products" style="display:none;">
+            <h2>Accesorios</h2>
+        </section>
+    </main>
 
     <footer>
-    <p>Fabricación de antenas y soportes de TV/LED/LCD &copy; 2024 YAGUI ELECTRONICA</p>
-    <div class="social-icons">
-        <a href="https://www.instagram.com" target="_blank">
-            <img src="img/ig.png" alt="Instagram">
-        </a>
-        <a href="https://www.facebook.com" target="_blank">
-            <img src="img/face.png" alt="Facebook">
-        </a>
-        <a href="https://www.linkedin.com" target="_blank">
-            <img src="img/in.png" alt="LinkedIn">
-        </a>
-    </div>
+        <p>Fabricación de antenas y soportes de TV/LED/LCD &copy; 2024 YAGUI ELECTRONICA</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com" target="_blank"><img src="img/ig.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com" target="_blank"><img src="img/face.png" alt="Facebook"></a>
+            <a href="https://www.linkedin.com" target="_blank"><img src="img/in.png" alt="LinkedIn"></a>
+        </div>
     </footer>
 
-
-    <!-- Script para mostrar/ocultar Historia -->
+    <!-- Script -->
     <script>
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("active");
+            document.querySelector(".menu-toggle").classList.toggle("active");
+        }
         function toggleHistoria() {
             const historia = document.getElementById("historia");
-            if (historia.style.display === "none" || historia.style.display === "") {
-                historia.style.display = "block";  // mostrar
-            } else {
-                historia.style.display = "none";   // ocultar
-            }
+            historia.style.display = (historia.style.display === "none" || historia.style.display === "") ? "block" : "none";
         }
-         function toggleAntenas() {
-        const antenas = document.getElementById("antenas");
-        if (antenas.style.display === "none" || antenas.style.display === "") {
-            antenas.style.display = "block";  // mostrar
-        } else {
-            antenas.style.display = "none";   // ocultar
+        function toggleAntenas() {
+            const antenas = document.getElementById("antenas");
+            antenas.style.display = (antenas.style.display === "none" || antenas.style.display === "") ? "block" : "none";
         }
-    }
         function toggleSoportes() {
-        const soportes = document.getElementById("soportes");
-        soportes.style.display = (soportes.style.display === "none" || soportes.style.display === "") ? "block" : "none";
-    }
-
-    function toggleSeguridad() {
-        const seguridad = document.getElementById("seguridad");
-        seguridad.style.display = (seguridad.style.display === "none" || seguridad.style.display === "") ? "block" : "none";
-    }
-
-    function toggleFerreteria() {
-        const ferreteria = document.getElementById("ferreteria");
-        ferreteria.style.display = (ferreteria.style.display === "none" || ferreteria.style.display === "") ? "block" : "none";
-    }
-
-    function toggleElectronica() {
-        const electronica = document.getElementById("electronica");
-        electronica.style.display = (electronica.style.display === "none" || electronica.style.display === "") ? "block" : "none";
-    }
-    function toggleAccesorios() {
-    const accesorios = document.getElementById("accesorios");
-    accesorios.style.display = (accesorios.style.display === "none" || accesorios.style.display === "") ? "block" : "none";
-}
+            const soportes = document.getElementById("soportes");
+            soportes.style.display = (soportes.style.display === "none" || soportes.style.display === "") ? "block" : "none";
+        }
+        function toggleSeguridad() {
+            const seguridad = document.getElementById("seguridad");
+            seguridad.style.display = (seguridad.style.display === "none" || seguridad.style.display === "") ? "block" : "none";
+        }
+        function toggleFerreteria() {
+            const ferreteria = document.getElementById("ferreteria");
+            ferreteria.style.display = (ferreteria.style.display === "none" || ferreteria.style.display === "") ? "block" : "none";
+        }
+        function toggleElectronica() {
+            const electronica = document.getElementById("electronica");
+            electronica.style.display = (electronica.style.display === "none" || electronica.style.display === "") ? "block" : "none";
+        }
+        function toggleAccesorios() {
+            const accesorios = document.getElementById("accesorios");
+            accesorios.style.display = (accesorios.style.display === "none" || accesorios.style.display === "") ? "block" : "none";
+        }
     </script>
 </body>
+</html>
