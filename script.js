@@ -268,4 +268,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(s => sectionObserver.observe(s));
 
+    /* ==========================================
+   SUBTABS DE SEGURIDAD
+   ========================================== */
+const subtabBtns     = document.querySelectorAll('.subtab-btn');
+const subtabSections = document.querySelectorAll('.subtab-section');
+
+subtabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const target = btn.dataset.subtarget;
+
+        subtabBtns.forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+        });
+        subtabSections.forEach(s => s.classList.remove('active'));
+
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        const section = document.getElementById(target);
+        if (section) section.classList.add('active');
+    });
+});
+
 });
