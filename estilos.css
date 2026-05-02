@@ -1242,6 +1242,6 @@ footer {
 /* Mobile */
 @media (max-width: 480px) {
     .whatsapp-bubble {
-        display: none;
+        display: block;
     }
 }
