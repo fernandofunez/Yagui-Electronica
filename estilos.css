@@ -1240,8 +1240,10 @@ footer {
 }
 
 /* Mobile */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .whatsapp-bubble {
         display: block;
+        font-size: 0.75rem;
+        padding: 8px 12px;
     }
 }
