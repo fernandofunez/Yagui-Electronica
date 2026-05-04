@@ -4,6 +4,55 @@ document.addEventListener('DOMContentLoaded', () => {
        1. NAVBAR: scroll effect
        ========================================== */
     const navbar = document.getElementById('navbar');
+    /* ===== LOADER ===== */
+(function() {
+    var loader  = document.getElementById('loader');
+    var img     = loader.querySelector('img');
+    var barWrap = document.getElementById('loader-bar-wrap');
+    var bar     = document.getElementById('loader-bar');
+    var pctText = document.getElementById('loader-pct');
+
+    setTimeout(function() {
+        img.classList.add('show');
+    }, 300);
+
+    setTimeout(function() {
+        barWrap.classList.add('show');
+        pctText.classList.add('show');
+    }, 800);
+
+    setTimeout(function() {
+        var pct = 0;
+
+        function tick() {
+            if (pct >= 100) {
+                bar.style.width = '100%';
+                pctText.textContent = '100%';
+                setTimeout(function() {
+                    loader.classList.add('hide');
+                    setTimeout(function() {
+                        loader.style.display = 'none';
+                    }, 600);
+                }, 500);
+                return;
+            }
+            pct++;
+            bar.style.width = pct + '%';
+            pctText.textContent = pct + '%';
+
+            var speed;
+            if (pct < 20)       speed = 100;
+            else if (pct < 50)  speed = 80;
+            else if (pct < 75)  speed = 100;
+            else if (pct < 90)  speed = 120;
+            else if (pct < 98)  speed = 150;
+            else                speed = 100;
+
+            setTimeout(tick, speed);
+        }
+        tick();
+    }, 1000);
+})();
 
     window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 50);
