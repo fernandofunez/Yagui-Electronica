@@ -122,20 +122,34 @@ document.addEventListener('DOMContentLoaded', () => {
        4. SCROLL SUAVE + CIERRE SIDEBAR
        ========================================== */
     document.querySelectorAll('.scroll-link').forEach(link => {
-        link.addEventListener('click', (e) => {
-            const href = link.getAttribute('href');
-            if (href && href.startsWith('#')) {
-                e.preventDefault();
-                closeSidebar();
-                const target = document.querySelector(href);
-                if (target) {
-                    const offset = navbar.offsetHeight + 12;
-                    const top = target.getBoundingClientRect().top + window.scrollY - offset;
-                    window.scrollTo({ top, behavior: 'smooth' });
-                }
+    link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+            e.preventDefault();
+            closeSidebar();
+
+            // Si el link apunta a una tab, activarla
+            const tabTarget = document.querySelector(`.tab-btn[data-target="${href.substring(1)}"]`);
+            if (tabTarget) {
+                tabBtns.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
+                });
+                tabSections.forEach(s => s.classList.remove('active'));
+                tabTarget.classList.add('active');
+                tabTarget.setAttribute('aria-selected', 'true');
+                document.getElementById(href.substring(1)).classList.add('active');
             }
-        });
+
+            const target = document.querySelector(href);
+            if (target) {
+                const offset = navbar.offsetHeight + 12;
+                const top = target.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }
+        }
     });
+});
 
 
     /* ==========================================
@@ -340,5 +354,77 @@ subtabBtns.forEach(btn => {
         if (section) section.classList.add('active');
     });
 });
+/* ==========================================
+   LIGHTBOX
+   ========================================== */
+var lightboxImages = [];
+var lightboxCurrent = 0;
 
+function buildLightbox() {
+    lightboxImages = [];
+    document.querySelectorAll('.product-img-wrap img').forEach(function(img, idx) {
+        lightboxImages.push({
+            src:     img.src,
+            caption: img.closest('.product-card').querySelector('h3').textContent
+        });
+        img.closest('.product-img-wrap').style.cursor = 'zoom-in';
+        img.closest('.product-img-wrap').setAttribute('data-index', idx);
+        img.closest('.product-img-wrap').addEventListener('click', function() {
+            openLightbox(parseInt(this.getAttribute('data-index')));
+        });
+    });
+}
+
+function openLightbox(idx) {
+    lightboxCurrent = idx;
+    document.getElementById('lightbox-img').src = lightboxImages[idx].src;
+    document.getElementById('lightbox-caption').textContent = lightboxImages[idx].caption;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+function changeLightbox(dir) {
+    lightboxCurrent = (lightboxCurrent + dir + lightboxImages.length) % lightboxImages.length;
+    var img = document.getElementById('lightbox-img');
+    img.style.animation = 'none';
+    img.offsetHeight;
+    img.style.animation = 'zoomIn 0.3s ease';
+    img.src = lightboxImages[lightboxCurrent].src;
+    document.getElementById('lightbox-caption').textContent = lightboxImages[lightboxCurrent].caption;
+}
+
+document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+document.getElementById('lightbox-prev').addEventListener('click', function() { changeLightbox(-1); });
+document.getElementById('lightbox-next').addEventListener('click', function() { changeLightbox(1); });
+
+document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+});
+
+document.addEventListener('keydown', function(e) {
+    if (!document.getElementById('lightbox').classList.contains('open')) return;
+    if (e.key === 'Escape')      closeLightbox();
+    if (e.key === 'ArrowRight')  changeLightbox(1);
+    if (e.key === 'ArrowLeft')   changeLightbox(-1);
+});
+
+buildLightbox();
+
+// Reconstruir lightbox al cambiar de tab
+tabBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        setTimeout(buildLightbox, 100);
+    });
+});
+
+subtabBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        setTimeout(buildLightbox, 100);
+    });
+});
 });

@@ -790,6 +790,26 @@ button {
     width: 100%;
     transition: background-color var(--transicion), transform 0.15s ease;
 }
+/* ===== BOTÓN WHATSAPP PRODUCTO ===== */
+.btn-whatsapp-producto {
+    display: block;
+    background-color: #25d366;
+    color: var(--blanco);
+    font-family: var(--font-titulo);
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    border-radius: 4px;
+    width: 100%;
+    text-align: center;
+    transition: background-color var(--transicion);
+}
+
+.btn-whatsapp-producto:hover {
+    background-color: #1da851;
+}
 
 .btn-cart:hover {
     background-color: var(--rojo-oscuro);
@@ -1405,4 +1425,97 @@ footer {
 
 #loader-pct.show {
     opacity: 1;
+}
+/* ===== LIGHTBOX ===== */
+#lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 99998;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    animation: fadeIn 0.3s ease;
+}
+
+#lightbox.open {
+    display: flex;
+}
+
+#lightbox-img {
+    max-width: 85%;
+    max-height: 75vh;
+    border-radius: 8px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+    animation: zoomIn 0.3s ease;
+    object-fit: contain;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to   { transform: scale(1);    opacity: 1; }
+}
+
+#lightbox-caption {
+    font-family: var(--font-titulo);
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+#lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: white;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background var(--transicion);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#lightbox-close:hover { background: var(--rojo); }
+
+#lightbox-prev,
+#lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.1);
+    border: 2px solid rgba(255,255,255,0.3);
+    color: white;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all var(--transicion);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#lightbox-prev:hover,
+#lightbox-next:hover {
+    background: var(--rojo);
+    border-color: var(--rojo);
+}
+
+#lightbox-prev { left: 20px; }
+#lightbox-next { right: 20px; }
+
+@media (max-width: 480px) {
+    #lightbox-img { max-width: 95%; }
+    #lightbox-prev { left: 8px; }
+    #lightbox-next { right: 8px; }
 }
